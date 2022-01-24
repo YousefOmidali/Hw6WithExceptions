@@ -66,6 +66,8 @@ public class Bank {
                 System.out.println("Only enter Digit! ");
             } catch (CouldNotMakeAccountExceptions o) {
                 o.printStackTrace();
+            } catch (NullPointerException t){
+                System.out.println("nullPointerException! ");
             }
 
             System.out.println("Account and Card is made ");
