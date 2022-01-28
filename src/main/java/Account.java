@@ -95,7 +95,4 @@ public class Account {
                 ", card=" + card +
                 '}';
     }
-    public void InvalidNationalCode () {
-
-    }
 }
