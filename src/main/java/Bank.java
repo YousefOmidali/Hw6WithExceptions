@@ -46,7 +46,7 @@ public class Bank {
             try {
                 order = scanner.nextInt();
             }catch (InputMismatchException e){
-                System.out.println("Input a Digit! ");
+                System.out.println("Invalid input ");
             }
             scanner.nextLine();
             if (order == 1) {
@@ -63,6 +63,8 @@ public class Bank {
                     password = scanner.nextInt();
                     services.createAccount(firstName, lastName, nationalCode, amount, null, AccountStatus.ALLOW,
                             cvv2, password, cardNumber);
+                    System.out.println("Account and Card is made ");
+                    System.out.println("Your cvv2 is:" + cvv2 + "  and your cardNumber is: " + cardNumber + "\n please take a note of them! ");
                 } catch (NumberFormatException e) {
                     System.out.println("Only enter Digit! ");
                 } catch (InputMismatchException a) {
@@ -71,8 +73,7 @@ public class Bank {
                     System.out.println("nullPointerException! ");
                 }
 
-                System.out.println("Account and Card is made ");
-                System.out.println("Your cvv2 is:" + cvv2 + "  and your cardNumber is: " + cardNumber + "\n please take a note of them! ");
+
             }
             if (order == 2) {
                 try {
@@ -94,6 +95,8 @@ public class Bank {
                     System.out.println("Only enter Digit! ");
                 } catch (InputMismatchException o) {
                     System.out.println("Invalid Input!");
+                }catch (NullPointerException t) {
+                    System.out.println("nullPointerException! ");
                 }
 
 
@@ -112,6 +115,8 @@ public class Bank {
                     System.out.println("Only enter Digit! ");
                 } catch (InputMismatchException o) {
                     System.out.println("Invalid Input!");
+                } catch (NullPointerException t) {
+                    System.out.println("nullPointerException! ");
                 }
 
                 while (numberOfWrongPasswordEntered < 4) {
