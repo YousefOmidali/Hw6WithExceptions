@@ -37,7 +37,7 @@ public class Bank {
         int firstCardCvv2;
         int secondCardCvv2;
         Card card = null;
-        Integer order=5;
+        Integer order = 5;
 
         while (true) {
             System.out.println("What do you want to do : \n1.Make an account \n2.Money transfer" +
@@ -45,7 +45,7 @@ public class Bank {
 
             try {
                 order = scanner.nextInt();
-            }catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println("Invalid input ");
             }
             scanner.nextLine();
@@ -95,7 +95,7 @@ public class Bank {
                     System.out.println("Only enter Digit! ");
                 } catch (InputMismatchException o) {
                     System.out.println("Invalid Input!");
-                }catch (NullPointerException t) {
+                } catch (NullPointerException t) {
                     System.out.println("nullPointerException! ");
                 }
 
@@ -143,9 +143,10 @@ public class Bank {
             }
             if (order == 4) {
                 System.out.println("enter your card number : ");
-                firstCardNumber = scanner.nextLong();
-                System.out.println("enter your national code: ");
+
                 try {
+                    firstCardNumber = scanner.nextLong();
+                    System.out.println("enter your national code: ");
                     nationalCode = scanner.nextInt();
                     System.out.println("enter your password");
                     password = scanner.nextInt();
@@ -156,11 +157,11 @@ public class Bank {
                     System.out.println("enter your start date: yyyyMMdd ");
                     Date endDate = Date.valueOf(scanner.nextLine());
                     services.viewTransactions(card, startDate, endDate);
-                }catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     System.out.println("Null Pointer exception");
-                }catch (InputMismatchException a){
+                } catch (InputMismatchException a) {
                     System.out.println("Just enter Digit! ");
-                }catch (NumberFormatException o) {
+                } catch (NumberFormatException o) {
                     System.out.println("Just enter Digit! ");
                 }
             }
